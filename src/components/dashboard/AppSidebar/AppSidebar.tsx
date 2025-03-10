@@ -16,6 +16,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 import { AppSidebarFooter } from "./AppSidebarFooter";
@@ -23,6 +24,7 @@ import { AppSidebarHeader } from "./AppSidebarHeader";
 import { OtpAndSmsService } from "./AppSidebarSmsOrOtp";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { setOpenMobile ,openMobile,state} = useSidebar();
   return (
     <Sidebar collapsible="icon" {...props}>
       {/* Header */}
@@ -31,12 +33,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       {/* Content */}
       <SidebarContent>
-        <AppSidebarContent items={data.navMain} />
-        <OtpAndSmsService projects={data.projects} />
+        <AppSidebarContent setOpenMobile={setOpenMobile} items={data.navMain} openMobile={openMobile} />
+        <OtpAndSmsService openMobile={openMobile} setOpenMobile={setOpenMobile} projects={data.projects} />
       </SidebarContent>
       {/* Footer */}
       <SidebarFooter>
-        <AppSidebarFooter />
+        <AppSidebarFooter state={state} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

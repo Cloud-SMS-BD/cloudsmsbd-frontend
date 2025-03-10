@@ -15,14 +15,18 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  useSidebar,
+  SidebarMenuSubItem
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 
 export function AppSidebarContent({
   items,
+  setOpenMobile,
+  openMobile,
 }: {
+  setOpenMobile: (state: boolean) =>
+    | void,
+  openMobile: boolean;
   items: {
     title: string;
     url: string;
@@ -34,7 +38,8 @@ export function AppSidebarContent({
     }[];
   }[];
 }) {
-  const { toggleSidebar } = useSidebar();
+
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Panel</SidebarGroupLabel>
@@ -59,7 +64,7 @@ export function AppSidebarContent({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem
                       onClick={() => {
-                        toggleSidebar();
+                        setOpenMobile(!openMobile );
                       }}
                       key={subItem.title}
                     >

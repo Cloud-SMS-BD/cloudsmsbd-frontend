@@ -1,7 +1,7 @@
 "use client";
 import { IsAuthenticatedInDashboard } from "@/hooks/isAuthenticated";
 import { AppSidebar } from "@/components/dashboard/AppSidebar/AppSidebar";
-import SidebarNavbar from "@/components/dashboard/SidebarNavbar";
+import SidebarNavbar from "@/components/dashboard/AppSidebar/SidebarNavbar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 export default function DashboardLayout({

@@ -15,9 +15,6 @@ import MobileNavbar from "./MobileNavar";
 
 const Navbar = () => {
   const isLogin = useAppSelector(selectIsLogin);
-
-  
-
   const navItems = [
     { name: "Home", link: "/", icon: <HomeIcon size={18} /> },
     {

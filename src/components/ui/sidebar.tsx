@@ -260,9 +260,9 @@ function SidebarTrigger({
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
-      variant="ghost"
+      variant="outline"
       size="icon"
-      className={cn("h-7 w-7", className)}
+      className={cn("h-7 w-7  ", className)}
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
@@ -271,7 +271,7 @@ function SidebarTrigger({
     >
      <svg
         orientation="vertical"
-          className="w-6 h-6 dark:invert"
+          className="w-6 h-6 "
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

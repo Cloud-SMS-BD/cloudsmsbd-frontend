@@ -2,15 +2,13 @@
 
 import {
   SidebarMenu,
-  SidebarMenuItem,
-  useSidebar,
+  SidebarMenuItem
 } from "@/components/ui/sidebar";
-import Profile from "../../Profile/Profile";
-import { useAppSelector } from "@/redux/hooks";
 import { selectGetProfile } from "@/redux/allStateSlice";
+import { useAppSelector } from "@/redux/hooks";
+import Profile from "../../Profile/Profile";
 
-export function AppSidebarFooter() {
-  const { state } = useSidebar();
+export function AppSidebarFooter({ state }: { state: string }) {
   const user = useAppSelector(selectGetProfile);
 
   return (

@@ -7,7 +7,7 @@ export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="">
+    <div>
       <div className="flex  items-center gap-3">
         <div className="flex  items-center gap-2">
           <div
