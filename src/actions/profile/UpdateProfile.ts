@@ -26,7 +26,7 @@ export const ProfileAction = async (
   }
 
   try {
-    const res = await axios.put(
+    await axios.put(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/profile/`,
       {
         name: formData.get("name"),
@@ -35,7 +35,7 @@ export const ProfileAction = async (
         withCredentials: true,
       }
     );
-    console.log(res.data);
+
     toast.success("Profile updated successfully");
     return {
       errors: {},

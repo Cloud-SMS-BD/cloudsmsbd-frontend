@@ -32,8 +32,8 @@ const TokensDataTable = () => {
   }, [dispatch, refresh]);
 
   const apiToken = useAppSelector(selectApiToken);
-  // console.log(apiToken);
-  console.log(refresh);
+
+
 
   return (
     <Table className="mt-6">
@@ -53,7 +53,7 @@ const TokensDataTable = () => {
           </TableRow>
         ) : (
           <TableRow>
-            <TableCell>{apiToken}</TableCell>
+            <TableCell className="text-xs md:text-base">{apiToken}</TableCell>
             <TableCell className="text-right space-x-2 flex items-center justify-end">
               <CopyToken token={apiToken} />
               <DeleteAPiKeyButton />
@@ -76,6 +76,7 @@ const CopyToken = ({ token }: { token: string }) => {
       }}
       className="p-2"
       variant="outline"
+      size={"sm"}
     >
       <Clipboard size={16} />
     </Button>

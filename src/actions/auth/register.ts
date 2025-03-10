@@ -39,7 +39,7 @@ export const RegisterAction = async (
   }
 
   try {
-    const res = await axios.post(
+    await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/registration/`,
       {
         name: formData.get("name"),
@@ -52,7 +52,7 @@ export const RegisterAction = async (
         withCredentials: true,
       }
     );
-    console.log(res.data);
+ 
   } catch (error) {
     if (error instanceof Error) {
       return {

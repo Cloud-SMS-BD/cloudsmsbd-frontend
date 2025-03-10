@@ -52,18 +52,17 @@ const VerifyOtpPage = () => {
     setTimer(600); // Reset the timer to 600 seconds (10 minutes)
     // Your resend OTP logic here
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/resend-otp/`,
         {},
         {
           withCredentials: true,
         }
       );
-      console.log(res.data);
+
       toast.success("Otp sent successfully");
-    } catch (error) {
+    } catch {
       toast.error("Error in resending otp");
-      console.log(error);
     }
   };
 
@@ -114,7 +113,10 @@ const VerifyOtpPage = () => {
         {state.errors.formError && (
           <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2">
             {`${state.errors.formError} `}{" "}
-            <Link className="underline underline-offset-4" href="/auth/register">
+            <Link
+              className="underline underline-offset-4"
+              href="/auth/register"
+            >
               Register here
             </Link>
           </div>

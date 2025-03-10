@@ -6,12 +6,9 @@ const GetApiToken = async () => {
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/api-key/`,
       { withCredentials: true }
     );
-    console.log(res);
 
     return res?.data?.api_key;
-  } catch (error: any) {
-    console.log(error);
-  }
+  } catch {}
 };
 
 export default GetApiToken;

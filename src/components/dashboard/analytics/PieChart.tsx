@@ -22,7 +22,7 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({
           SMS Analytics Overview
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent className="flex-1 pb-0 text-sm md:text-base">
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
             <Pie
@@ -44,7 +44,7 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}
-                  className="transition-all duration-300 hover:opacity-80"
+                  className="transition-all  duration-300 hover:opacity-80"
                 />
               ))}
             </Pie>

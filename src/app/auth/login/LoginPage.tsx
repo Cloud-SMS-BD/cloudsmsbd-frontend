@@ -31,7 +31,7 @@ const LoginPage = () => {
   const handleResendOtp = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
+      await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/resend-otp/`,
         {},
         {
@@ -39,12 +39,10 @@ const LoginPage = () => {
         }
       );
 
-      console.log(res.data);
       toast.success("Otp sent successfully");
       router.push("/auth/verify-otp");
-    } catch (error) {
+    } catch {
       toast.error("Error in resending otp");
-      console.log(error);
     }
   };
 

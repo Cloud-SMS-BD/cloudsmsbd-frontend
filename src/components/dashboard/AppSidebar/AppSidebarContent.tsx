@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { ChevronRight, type LucideIcon } from "lucide-react";
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -16,23 +16,25 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
-import Link from "next/link"
+  useSidebar,
+} from "@/components/ui/sidebar";
+import Link from "next/link";
 
 export function AppSidebarContent({
   items,
 }: {
   items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+    isActive?: boolean;
     items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+      title: string;
+      url: string;
+    }[];
+  }[];
 }) {
+  const { toggleSidebar } = useSidebar();
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Panel</SidebarGroupLabel>
@@ -55,7 +57,12 @@ export function AppSidebarContent({
               <CollapsibleContent>
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
+                    <SidebarMenuSubItem
+                      onClick={() => {
+                        toggleSidebar();
+                      }}
+                      key={subItem.title}
+                    >
                       <SidebarMenuSubButton asChild>
                         <Link href={subItem.url}>
                           <span>{subItem.title}</span>
@@ -70,5 +77,5 @@ export function AppSidebarContent({
         ))}
       </SidebarMenu>
     </SidebarGroup>
-  )
+  );
 }

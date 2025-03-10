@@ -6,6 +6,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 
@@ -18,12 +19,18 @@ export function OtpAndSmsService({
     icon: LucideIcon;
   }[];
 }) {
+  const { toggleSidebar } = useSidebar();
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>OTP & SMS Service</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
-          <SidebarMenuItem key={item.name}>
+          <SidebarMenuItem
+            onClick={() => {
+              toggleSidebar();
+            }}
+            key={item.name}
+          >
             <SidebarMenuButton asChild>
               <Link href={item.url}>
                 <item.icon />

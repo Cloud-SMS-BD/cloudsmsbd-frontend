@@ -37,21 +37,21 @@ const AllSmsListTable = () => {
   const allSmsList = useAppSelector(selectAllSmsList);
 
   return (
-    <div className="space-y-6 w-full px-4">
-      <h1 className="text-3xl font-bold flex items-center gap-2">
+    <div className="w-full">
+      <h1 className="text-2xl md:text-3xl font-semibold flex justify-center items-center gap-2">
         <MessageSquareMore size={25} />
         <span>SMS List</span>
       </h1>
-      <div className="overflow-x-auto bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg">
+      {/* Table */}
+      <div className="overflow-x-auto w-full border mt-4">
         <TableData allSmsList={allSmsList} />
-
-        {/* Pagination */}
-        <Pagination
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          allSmsList={allSmsList}
-        />
       </div>
+      {/* Pagination */}
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        allSmsList={allSmsList}
+      />
     </div>
   );
 };

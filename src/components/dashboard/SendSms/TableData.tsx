@@ -1,12 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import {
-  TableCaption,
-  TableHeader,
-  TableRow,
-  TableHead,
+  Table,
   TableBody,
   TableCell,
-  Table,
+  TableHead,
+  TableHeader,
+  TableRow
 } from "@/components/ui/table";
 
 const TableData = ({ allSmsList }: { allSmsList: any }) => {
@@ -20,8 +19,8 @@ const TableData = ({ allSmsList }: { allSmsList: any }) => {
   };
 
   return (
-    <Table className="overflow-x-auto w-full">
-      <TableCaption>List of Sent SMS</TableCaption>
+    <Table>
+     
       <TableHeader>
         <TableRow className="bg-gray-100 dark:bg-gray-800">
           <TableHead>Recipient</TableHead>

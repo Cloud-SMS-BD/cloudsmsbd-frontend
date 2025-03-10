@@ -7,8 +7,6 @@ const AllSmsList = async (page: number = 1) => {
       { withCredentials: true }
     );
     return res?.data;
-  } catch (error: any) {
-    console.error(error);
-  }
+  } catch {}
 };
 export default AllSmsList;

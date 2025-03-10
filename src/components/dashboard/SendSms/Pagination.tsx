@@ -11,7 +11,7 @@ const Pagination = ({
   currentPage: any;
 }) => {
   return (
-    <div className="flex justify-center gap-4 mt-4">
+    <div className="flex justify-center gap-4 mb-4 mt-3">
       <Button
         disabled={allSmsList?.previous === null}
         variant={"outline"}

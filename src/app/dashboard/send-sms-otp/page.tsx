@@ -3,8 +3,9 @@ import SendSMS from "@/components/dashboard/SendSms/SendSms";
 
 const Page = () => {
   return (
-    <div className="min-h-screen  p-6 flex flex-col items-center space-y-8">
+    <div className="min-h-screen  flex flex-col items-center space-y-8 p-3">
       <SendSMS />
+
       <AllSmsListTable />
     </div>
   );

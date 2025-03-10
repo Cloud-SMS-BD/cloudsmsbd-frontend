@@ -1,6 +1,7 @@
 "use client";
 import AnalyticsCard from "@/components/dashboard/analytics/AnalyticsCard";
 import PieChartComponent from "@/components/dashboard/analytics/PieChart";
+import { TrySendingMessage } from "@/components/dashboard/analytics/TrySendingMessageModal";
 import AllSmsListTable from "@/components/dashboard/SendSms/AllSmsList";
 import { selectAvailableSms, selectSentSms } from "@/redux/allStateSlice";
 import { useAppSelector } from "@/redux/hooks";
@@ -23,12 +24,14 @@ const OverviewPage = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-6xl p-6">
+    <div className="container mx-auto max-w-6xl p-3">
       <h1 className="text-3xl font-bold mb-6">📊 SMS Analytics</h1>
       {/* Pie Chart */}
       <PieChartComponent analyticsData={analyticsData} />
       {/* Analytics Cards */}
       <AnalyticsCard analyticsData={analyticsData} />
+      {/* Send Sms Modal */}
+      <TrySendingMessage />
       {/* Recent Sms */}
       <div className="mt-4">
         <AllSmsListTable />

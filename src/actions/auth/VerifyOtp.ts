@@ -26,9 +26,9 @@ export const VerifyOtpAction = async (
       errors: result.error.flatten().fieldErrors,
     };
   }
-  
+
   try {
-    const res = await axios.post(
+    await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/verify-otp/`,
       {
         otp: formData.get("otp"),
@@ -38,15 +38,12 @@ export const VerifyOtpAction = async (
       }
     );
 
-    console.log(res.data);
     toast.success("OTP verified successfully");
     return {
       success: true,
       errors: {},
     };
   } catch (error: unknown) {
-    console.log(error);
-
     toast.error("Failed to verify OTP");
     if (error instanceof Error) {
       return {

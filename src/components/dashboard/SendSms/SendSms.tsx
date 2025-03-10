@@ -26,7 +26,7 @@ const SendSMS = () => {
     }
   }, [isPending, dispatch, state]);
   return (
-    <section className="flex container mx-auto flex-col items-center justify-center p-4">
+    <section className="flex container mx-auto flex-col items-center justify-center ">
       <div className="max-w-3xl w-full bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
           Send SMS or OTP
@@ -38,7 +38,7 @@ const SendSMS = () => {
             </Label>
             <Switch checked={isBulk} onCheckedChange={setIsBulk} />
             <Label className="text-gray-700 dark:text-gray-300">
-              isBulk SMS
+              Bulk SMS
             </Label>
           </div>
           {/* Message Input */}
@@ -84,23 +84,6 @@ const SendSMS = () => {
             </p>
           </div>
 
-          {/* <div className="mb-4">
-            <Label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
-              {isBulk ? "Recipients (comma-separated)" : "Recipient"}
-            </Label>
-            <Input
-              name="recipient"
-              placeholder={
-                isBulk ? "01XXXXXXX , 01XXXXXXX" : "01XXXXXXX"
-              }
-              className="w-full dark:bg-gray-800 dark:text-white"
-            />
-            <p className="text-xs text-gray-500 mt-1">
-              {isBulk
-                ? "Enter multiple phone numbers separated by commas."
-                : "Enter a single phone number."}
-            </p>
-          </div> */}
           {state.errors.recipient && (
             <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">
               {state.errors.recipient}
@@ -110,7 +93,7 @@ const SendSMS = () => {
           {/* Send Button */}
           <Button
             disabled={isPending}
-            className="w-full bg-green-500 hover:bg-green-600 text-white"
+            className="w-full bg-sky-500 hover:bg-sky-600 text-white"
             type="submit"
           >
             {isPending ? <Loader className="w-6 h-6 animate-spin" /> : ""}

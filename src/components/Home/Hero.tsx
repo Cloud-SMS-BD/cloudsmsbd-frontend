@@ -6,9 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   const isLogin = useAppSelector(selectIsLogin);
-  console.log("====================================");
-  console.log(isLogin);
-  console.log("====================================");
+
   return (
     <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900 transition-colors">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-100),white)] opacity-20 dark:bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-800),white)]"></div>
@@ -32,7 +30,8 @@ const Hero = () => {
             </span>
           </p>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Experience secure, fast, and cost-effective OTP solutions for your business, enhanced by AI technology.
+            Experience secure, fast, and cost-effective OTP solutions for your
+            business, enhanced by AI technology.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center mt-9 space-y-4 sm:space-y-0 sm:space-x-5">
             <Link

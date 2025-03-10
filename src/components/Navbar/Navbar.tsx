@@ -15,7 +15,7 @@ import MobileNavbar from "./MobileNavar";
 
 const Navbar = () => {
   const isLogin = useAppSelector(selectIsLogin);
-  console.log(isLogin);
+
   
 
   const navItems = [

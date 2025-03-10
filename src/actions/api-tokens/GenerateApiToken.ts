@@ -6,11 +6,9 @@ type GenerateApiKey = {
     formError?: string[];
   };
 };
-export const GenerateApiKeyAction = async (
-  
-): Promise<GenerateApiKey> => {
+export const GenerateApiKeyAction = async (): Promise<GenerateApiKey> => {
   try {
-    const res = await axios.post(
+    await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/api-key/`,
       {},
       {
@@ -18,12 +16,11 @@ export const GenerateApiKeyAction = async (
       }
     );
 
-    console.log("data", res.data);
     toast.success("API Key generated successfully");
     return {};
-  } catch (error) {
+  } catch {
     toast.error("Failed to generate API Key");
-    console.error(error);
+
     return {
       errors: {
         formError: ["Failed to generate API Key"],

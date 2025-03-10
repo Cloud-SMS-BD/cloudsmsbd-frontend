@@ -23,7 +23,7 @@ export const SendSmsAction = async (
     message: formData.get("message"),
     recipient: formData.get("recipient"),
   });
-  // console.log(result);
+
   if (!result.success) {
     return {
       errors: result.error.flatten().fieldErrors,
@@ -35,7 +35,7 @@ export const SendSmsAction = async (
     ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/forwarder/send/?type=bulk`
     : `${process.env.NEXT_PUBLIC_BACKEND_URL}/forwarder/send/`;
   try {
-    const res = await axios.post(
+    await axios.post(
       URL,
       {
         message: formData.get("message"),
@@ -47,12 +47,10 @@ export const SendSmsAction = async (
         withCredentials: true,
       }
     );
-    console.log(res.data);
+
     toast.success("SMS sent successfully");
     return { errors: {} };
   } catch (error) {
-    console.log(error);
-
     toast.error("Failed to send SMS");
     if (error instanceof Error) {
       return {
