@@ -6,12 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { setSendSmsRefresh } from "@/redux/allStateSlice";
-import { useAppDispatch } from "@/redux/hooks";
+import { selectAvailableSms, setSendSmsRefresh } from "@/redux/allStateSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { Loader } from "lucide-react";
 import { useActionState, useEffect, useState } from "react";
 
 const SendSMS = () => {
+  const availableSms = useAppSelector(selectAvailableSms);
   const dispatch = useAppDispatch();
   const [isBulk, setIsBulk] = useState(false);
   const [state, action, isPending] = useActionState(
@@ -37,9 +38,7 @@ const SendSMS = () => {
               Single SMS
             </Label>
             <Switch checked={isBulk} onCheckedChange={setIsBulk} />
-            <Label className="text-gray-700 dark:text-gray-300">
-              Bulk SMS
-            </Label>
+            <Label className="text-gray-700 dark:text-gray-300">Bulk SMS</Label>
           </div>
           {/* Message Input */}
           <div className="mb-4">
@@ -99,6 +98,11 @@ const SendSMS = () => {
             {isPending ? <Loader className="w-6 h-6 animate-spin" /> : ""}
             Send SMS
           </Button>
+          {availableSms && (
+            <p className="text-center mt-1 text-sm text-gray-500">
+              Available SMS: {availableSms}
+            </p>
+          )}
           {state.errors.formError && (
             <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">
               {state.errors.formError}

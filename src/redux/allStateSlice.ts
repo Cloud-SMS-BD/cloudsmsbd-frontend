@@ -15,6 +15,8 @@ interface problemState {
   // dashboard data
   available_sms: number;
   sent_sent: number;
+  // purchase history
+  purchaseHistory: any;
 }
 
 const initialState: problemState = {
@@ -32,6 +34,8 @@ const initialState: problemState = {
   // dashboard data
   available_sms: 0,
   sent_sent: 0,
+  // purchase history
+  purchaseHistory: [],
 };
 
 export const allStateSlice = createSlice({
@@ -70,6 +74,10 @@ export const allStateSlice = createSlice({
     setSentSms: (state, action) => {
       state.sent_sent = action.payload;
     },
+    // purchase history
+    setPurchaseHistory: (state, action) => {
+      state.purchaseHistory = action.payload;
+    },
   },
 });
 
@@ -88,6 +96,8 @@ export const {
   // dashboard data
   setAvailableSms,
   setSentSms,
+  // purchase history
+  setPurchaseHistory,
 } = allStateSlice.actions;
 
 // check user login or not
@@ -108,4 +118,8 @@ export const selectAllSmsList = (state: RootState) => state.problem.allSmsList;
 export const selectAvailableSms = (state: RootState) =>
   state.problem.available_sms;
 export const selectSentSms = (state: RootState) => state.problem.sent_sent;
+// purchase history
+export const selectPurchaseHistory = (state: RootState) =>
+  state.problem.purchaseHistory;
 export default allStateSlice.reducer;
+

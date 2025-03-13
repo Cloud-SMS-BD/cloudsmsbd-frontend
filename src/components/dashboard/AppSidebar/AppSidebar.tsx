@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Banknote,
   BookOpen,
   KeyRound,
   LayoutDashboard,
@@ -24,7 +25,7 @@ import { AppSidebarHeader } from "./AppSidebarHeader";
 import { OtpAndSmsService } from "./AppSidebarSmsOrOtp";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { setOpenMobile ,openMobile,state} = useSidebar();
+  const { setOpenMobile, openMobile, state } = useSidebar();
   return (
     <Sidebar collapsible="icon" {...props}>
       {/* Header */}
@@ -33,8 +34,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       {/* Content */}
       <SidebarContent>
-        <AppSidebarContent setOpenMobile={setOpenMobile} items={data.navMain} openMobile={openMobile} />
-        <OtpAndSmsService openMobile={openMobile} setOpenMobile={setOpenMobile} projects={data.projects} />
+        <AppSidebarContent
+          setOpenMobile={setOpenMobile}
+          items={data.navMain}
+          openMobile={openMobile}
+        />
+        <OtpAndSmsService
+          openMobile={openMobile}
+          setOpenMobile={setOpenMobile}
+          projects={data.projects}
+        />
       </SidebarContent>
       {/* Footer */}
       <SidebarFooter>
@@ -71,6 +80,22 @@ const data = {
         {
           title: "API Guide",
           url: "/dashboard/doc/api-guide",
+        },
+      ],
+    },
+    {
+      title: "Purchase & History",
+      url: "#",
+      icon: Banknote,
+      isActive: true,
+      items: [
+        {
+          title: "Purchase Plan",
+          url: "/dashboard/purchase-and-history/purchase-plan",
+        },
+        {
+          title: "Purchase History",
+          url: "/dashboard/purchase-and-history/purchase-history",
         },
       ],
     },

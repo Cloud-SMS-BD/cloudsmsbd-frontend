@@ -17,11 +17,6 @@ const Navbar = () => {
   const isLogin = useAppSelector(selectIsLogin);
   const navItems = [
     { name: "Home", link: "/", icon: <HomeIcon size={18} /> },
-    {
-      name: "Api Documentation",
-      link: `${isLogin ? "/dashboard/doc/api-guide" : "/api-guide"}`,
-      icon: <BookOpenIcon size={18} />,
-    },
     ...(isLogin
       ? [
           {
@@ -31,6 +26,11 @@ const Navbar = () => {
           },
         ]
       : []),
+    {
+      name: "Api Documentation",
+      link: `${isLogin ? "/dashboard/doc/api-guide" : "/api-guide"}`,
+      icon: <BookOpenIcon size={18} />,
+    },
   ];
 
   return (

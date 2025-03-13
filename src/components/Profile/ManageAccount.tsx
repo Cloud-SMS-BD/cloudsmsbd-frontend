@@ -52,19 +52,6 @@ const ManageAccount: React.FC<{ user: User }> = ({ user }) => {
         {/* Avatar Upload */}
         <div className="flex flex-col items-center gap-3">
           <Aavtar className="w-20 h-20 border" />
-
-          {/* <input
-            type="file"
-            accept="image/*"
-            className="hidden"
-            id="avatar-upload"
-          /> */}
-          {/* <Label
-            htmlFor="avatar-upload"
-            className="cursor-pointer text-xs text-blue-500 hover:underline dark:text-blue-400"
-          >
-            Change Profile Picture
-          </Label> */}
         </div>
 
         {/* Form Fields */}

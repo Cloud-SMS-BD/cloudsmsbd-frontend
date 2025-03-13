@@ -43,14 +43,14 @@ const AllSmsListTable = () => {
         <span>SMS List</span>
       </h1>
       {/* Table */}
-      <div className="overflow-x-auto w-full border mt-4">
+      <div className="overflow-x-auto max-w-7xl mx-auto w-full border mt-4">
         <TableData allSmsList={allSmsList} />
       </div>
       {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        allSmsList={allSmsList}
+        data={allSmsList}
       />
     </div>
   );

@@ -15,7 +15,7 @@ const TableData = ({ allSmsList }: { allSmsList: any }) => {
       : message;
   };
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleString();
+    return dateString ? new Date(dateString).toLocaleString() : "Not available";
   };
 
   return (

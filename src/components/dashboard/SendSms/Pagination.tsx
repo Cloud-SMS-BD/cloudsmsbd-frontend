@@ -3,17 +3,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Pagination = ({
   setCurrentPage,
-  allSmsList,
+  data,
   currentPage,
 }: {
   setCurrentPage: any;
-  allSmsList: any;
+  data: any;
   currentPage: any;
 }) => {
   return (
     <div className="flex justify-center gap-4 mb-4 mt-3">
       <Button
-        disabled={allSmsList?.previous === null}
+        disabled={data?.previous === null}
         variant={"outline"}
         size={"sm"}
         onClick={() => setCurrentPage((prev: any) => Math.max(prev - 1, 1))}
@@ -21,10 +21,10 @@ const Pagination = ({
         <ChevronLeft />
       </Button>
       <span className="font-medium">
-        {currentPage} / {Math.ceil(allSmsList?.count / 10)}
+        {currentPage} / {Math.ceil(data?.count / 10)}
       </span>
       <Button
-        disabled={allSmsList?.next === null}
+        disabled={data?.next === null}
         variant={"outline"}
         size={"sm"}
         onClick={() => setCurrentPage((prev: any) => prev + 1)}

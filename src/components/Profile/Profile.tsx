@@ -9,6 +9,7 @@ import {
   selectGetProfile,
   selectIsLogin,
   selectProfilRefresh,
+  selectSendSmsRefresh,
   setAvailableSms,
   setGetProfile,
   setIsLogin,
@@ -22,6 +23,7 @@ const Profile = () => {
   const dispatch = useAppDispatch();
   const isLogin = useAppSelector(selectIsLogin);
   const refresh = useAppSelector(selectProfilRefresh);
+  const refreshAfterSendSms = useAppSelector(selectSendSmsRefresh);
   useEffect(() => {
     GetProfile()
       .then((e) => {
@@ -33,7 +35,7 @@ const Profile = () => {
         dispatch(setAvailableSms(0));
         dispatch(setIsLogin(false));
       });
-  }, [dispatch, refresh, isLogin]);
+  }, [dispatch, refresh, isLogin,refreshAfterSendSms]);
 
   const user = useAppSelector(selectGetProfile);
   return (
