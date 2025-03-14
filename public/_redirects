@@ -1,1 +1,5 @@
-/*     https://33dd241f-eaf3.ongshak.com/:splat    200
+# Redirect API requests only for api.cloudsmsbd.com
+https://api.cloudsmsbd.com/* https://33dd241f-eaf3.ongshak.com/:splat 200!
+
+# Serve frontend normally for cloudsmsbd.com
+/* /index.html 200!
