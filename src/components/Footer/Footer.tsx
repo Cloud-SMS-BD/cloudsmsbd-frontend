@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -8,14 +7,16 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <Image
+            <img
               src="/logo.jpg"
               alt="logo"
-              width={50}
-              height={50}
+              width="40"
+              height="40"
               className="rounded-md size-8 "
             />
-            <h2 className="text-xl font-semibold dark:text-white">Cloud SMS BD</h2>
+            <h2 className="text-xl font-semibold dark:text-white">
+              Cloud SMS BD
+            </h2>
           </div>
 
           {/* Copyright */}

@@ -40,8 +40,8 @@ const PricingModal = ({
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <Carousel className="">
-          <CarouselContent >
+        <Carousel>
+          <CarouselContent>
             {!isBusiness && (
               <CarouselItem className="flex items-center justify-center w-full">
                 <PricingDetails
@@ -64,7 +64,7 @@ const PricingModal = ({
             </CarouselItem>
           </CarouselContent>
           {!isBusiness && (
-            <div className="flex items-center justify-center space-x-4  mt-4">
+            <div className="flex items-center justify-center gap-2 mt-4">
               <CarouselPrevious />
               <CarouselNext />
             </div>

@@ -4,7 +4,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { ArrowLeft } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export function AppSidebarHeader() {
@@ -22,12 +21,12 @@ export function AppSidebarHeader() {
             size="lg"
             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
           >
-            <Image
+            <img
               src="/logo.jpg"
               width={32}
               height={32}
               alt="logo"
-              className="rounded-md w-auto h-auto"
+              className="rounded-md"
             />
             <div className="grid flex-1 text-left text-sm leading-tight cursor-pointer">
               <span className="truncate font-semibold">{activeTeam.name}</span>

@@ -7,7 +7,6 @@ import { useAppDispatch } from "@/redux/hooks";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Loader, Lock, Mail } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useActionState, useEffect } from "react";
@@ -55,12 +54,12 @@ const LoginPage = () => {
     >
       {/* Left Side Image */}
       <div className="hidden md:flex w-1/2  items-center justify-center bg-gradient-to-r from-[#686df6] to-emerald-500">
-        <Image
+        <img
           src="/login.webp"
           alt="Login Illustration"
           width={300}
           height={400}
-          priority
+          
           className=" object-cover animate-pulse"
         />
       </div>

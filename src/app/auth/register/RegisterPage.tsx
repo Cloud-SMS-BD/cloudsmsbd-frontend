@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { Loader, Lock, Mail, PhoneCall, User } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useActionState } from "react";
 
@@ -22,7 +21,7 @@ const RegisterPage = () => {
     >
       {/* Left Side Image */}
       <div className="hidden md:flex w-1/2  items-center justify-center bg-gradient-to-r from-[#686df6] to-emerald-500">
-        <Image
+        <img
           src="/login.webp"
           alt="Login Illustration"
           width={300}

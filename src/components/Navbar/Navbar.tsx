@@ -3,12 +3,11 @@ import Profile from "@/components/Profile/Profile";
 import { selectIsLogin } from "@/redux/allStateSlice";
 import { useAppSelector } from "@/redux/hooks";
 import {
-  LogInIcon,
-  HomeIcon,
   BookOpenIcon,
+  HomeIcon,
   LayoutDashboardIcon,
+  LogInIcon,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle2 } from "../ui/ModeToggle2";
 import MobileNavbar from "./MobileNavar";
@@ -40,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <MobileNavbar navItems={navItems} />
           <Link href="/" className="flex items-center space-x-2">
-            <Image
+            <img
               src="/logo.jpg"
               alt="logo"
               className="rounded-full md:block hidden size-8 md:size-12 border-2 border-sky-500"

@@ -89,21 +89,11 @@ const Hero = () => {
               {/* Image with border inside gradient */}
               <div className="relative bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
                 <img
-                  className="rounded-lg shadow-lg w-auto h-auto"
+                  className="rounded-lg shadow-lg "
                   src="/heroimg.png"
                   alt="heroimgpng"
                 />
-                {/* <Image
-                  width={1200}
-                  height={800}
-                  quality={100}
-                  className="rounded-lg shadow-lg w-auto h-auto"
-                  src="/heroimg.png"
-                  alt="heroimgpng"
-                  placeholder="blur"
-                  priority
-                 
-                /> */}
+                
               </div>
             </div>
           </div>

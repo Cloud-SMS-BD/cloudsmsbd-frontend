@@ -1,6 +1,5 @@
+import { Check, Clipboard } from "lucide-react"; // Icons
 import { useState } from "react";
-import Image from "next/image";
-import { Clipboard, Check } from "lucide-react"; // Icons
 
 const PricingDetails = ({
   item,
@@ -38,7 +37,7 @@ const PricingDetails = ({
     item.package_name === "monthly" ? smsQuantityMonthly : smsQuantityStarter;
 
   return (
-    <div className="text-black dark:text-white ">
+    <div className="text-black dark:text-white">
       <div>
         You are purchasing the{" "}
         <strong className="text-red-500">{item?.name}</strong> package.
@@ -53,7 +52,7 @@ const PricingDetails = ({
 
       {/* Bkash Payment Section */}
       <div className="flex flex-col items-center justify-center mt-4 border rounded-md">
-        <Image
+        <img
           src="/bkash.png"
           width={100}
           height={100}
@@ -78,9 +77,9 @@ const PricingDetails = ({
             </button>
           </div>
         ))}
-        <span className="mt-2 text-center">
+        <span className="my-2 text-center">
           বিকাশ নম্বরে <span className="text-red-500 font-semibold">Send money </span>করুন এবং{" "}
-          <span className="text-red-500 font-semibold">Transaction ID </span>সংরক্ষণ করুন
+          <span className="text-red-500 font-semibold">Transaction ID </span>সংরক্ষণ করুন।
         </span>
       </div>
     </div>
