@@ -13,13 +13,13 @@ const GetStartedPage = () => {
         Use this endpoint to send SMS to a phone number. You have to generate an API key from the dashboard.
       </p>
 
-      <h3 className="mt-6 text-xl font-semibold">Request</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white">
-        <code>{`POST https://api.cloudsmsbd.com/sms/?key=<API_KEY>`}</code>
+      <h3 className="mt-6 text-xl font-semibold">Request : <span className="text-green-300 ">POST</span> </h3>
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white overflow-auto break-words whitespace-pre-wrap">
+        <code>{`https://api.cloudsmsbd.com/sms/?key=<API_KEY>`}</code>
       </pre>
 
       <h3 className="mt-4 text-xl font-semibold">Payload</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "message": "hello Cloud SMS BD",
     "recipient": "+8801XXXXXXXXX"
@@ -27,7 +27,7 @@ const GetStartedPage = () => {
       </pre>
 
       <h3 className="mt-4 text-xl font-semibold">Response</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-green-300">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-green-300 overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "success": true,
     "id": "e68d5e5e-9f79-4944-9b42-...",
@@ -47,15 +47,15 @@ const GetStartedPage = () => {
         Use this endpoint to send SMS to multiple phone numbers. You have to generate an API key from the dashboard.
       </p>
 
-      <h3 className="mt-6 text-xl font-semibold">Request</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white">
+      <h3 className="mt-6 text-xl font-semibold">Request : <span className="text-green-300 ">POST</span> </h3>
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white overflow-auto break-words whitespace-pre-wrap">
         <code>
-          {`POST https://api.cloudsmsbd.com/sms/?type=bulk&key=<API_KEY>`}
+          {`https://api.cloudsmsbd.com/sms/?type=bulk&key=<API_KEY>`}
         </code>
       </pre>
 
       <h3 className="mt-4 text-xl font-semibold">Payload</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white overflow-auto break-words whitespace-pre-wrap">
         <code>
           {`{
   "message": "hello Cloud SMS BD",
@@ -65,7 +65,7 @@ const GetStartedPage = () => {
       </pre>
 
       <h3 className="mt-4 text-xl font-semibold">Response</h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-green-300">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-green-300 overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "success": true,
     "message": "hello Cloud SMS BD",
@@ -88,7 +88,7 @@ const GetStartedPage = () => {
       <h3 className="mt-4 text-xl font-semibold">
         Invalid API Key
       </h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300 overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "success": false,
     "message": "Invalid API key"
@@ -98,7 +98,7 @@ const GetStartedPage = () => {
       <h3 className="mt-4 text-xl font-semibold">
         Missing required fields
       </h3>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300 overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "success": false,
     "message": "(recipients) This field is required."
@@ -112,7 +112,7 @@ const GetStartedPage = () => {
       <p className="mt-2 text-gray-600 dark:text-slate-400">
         Every message is checked by AI to prevent inappropriate content.
       </p>
-      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300">
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-red-300 overflow-auto break-words whitespace-pre-wrap">
         <code>{`{
     "success": false,
     "message": "Inappropriate content is not allowed"

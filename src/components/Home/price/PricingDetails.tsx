@@ -52,7 +52,7 @@ const PricingDetails = ({
       </div>
 
       {/* Bkash Payment Section */}
-      <div className="flex flex-col items-center justify-center mt-4 border rounded-md p-4">
+      <div className="flex flex-col items-center justify-center mt-4 border rounded-md">
         <Image
           src="/bkash.png"
           width={100}

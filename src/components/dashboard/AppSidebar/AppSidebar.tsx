@@ -81,7 +81,7 @@ const data = {
         },
         {
           title: "Examples",
-          url: "/dashboard/doc/introduction",
+          url: "/dashboard/doc/examples",
         },
       ],
     },

@@ -1,7 +1,6 @@
 "use client";
 import { selectIsLogin } from "@/redux/allStateSlice";
 import { useAppSelector } from "@/redux/hooks";
-import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
@@ -89,7 +88,12 @@ const Hero = () => {
 
               {/* Image with border inside gradient */}
               <div className="relative bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
-                <Image
+                <img
+                  className="rounded-lg shadow-lg w-auto h-auto"
+                  src="/heroimg.png"
+                  alt="heroimgpng"
+                />
+                {/* <Image
                   width={1200}
                   height={800}
                   quality={100}
@@ -98,8 +102,8 @@ const Hero = () => {
                   alt="heroimgpng"
                   placeholder="blur"
                   priority
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                />
+                 
+                /> */}
               </div>
             </div>
           </div>

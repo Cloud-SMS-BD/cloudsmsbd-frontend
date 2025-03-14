@@ -35,15 +35,15 @@ const PricingModal = ({
       >
         {!isBusiness ? "Buy Now" : "Contact Us"}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="">
         <DialogHeader className="hidden">
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <Carousel>
-          <CarouselContent>
+        <Carousel className="">
+          <CarouselContent >
             {!isBusiness && (
-              <CarouselItem className="flex items-center justify-center">
+              <CarouselItem className="flex items-center justify-center w-full">
                 <PricingDetails
                   item={item}
                   smsQuantityMonthly={smsQuantityMonthly}
@@ -54,7 +54,7 @@ const PricingModal = ({
             {/* details */}
 
             {/*pricing form */}
-            <CarouselItem className="flex items-center justify-center">
+            <CarouselItem className="flex items-center justify-center w-full">
               <PricingForm
                 item={item}
                 smsQuantityMonthly={smsQuantityMonthly}
