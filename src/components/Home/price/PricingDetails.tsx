@@ -38,7 +38,7 @@ const PricingDetails = ({
     item.package_name === "monthly" ? smsQuantityMonthly : smsQuantityStarter;
 
   return (
-    <div className="text-black dark:text-white p-2">
+    <div className="text-black dark:text-white ">
       <div>
         You are purchasing the{" "}
         <strong className="text-red-500">{item?.name}</strong> package.

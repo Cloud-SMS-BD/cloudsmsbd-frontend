@@ -36,42 +36,40 @@ const PricingModal = ({
         {!isBusiness ? "Buy Now" : "Contact Us"}
       </DialogTrigger>
       <DialogContent>
-        <div className="mx-auto max-w-xs">
-          <DialogHeader>
-            <DialogTitle></DialogTitle>
-            <DialogDescription></DialogDescription>
-          </DialogHeader>
-          <Carousel className="w-full max-w-xs">
-            <CarouselContent>
-              {!isBusiness && (
-                <CarouselItem className="p-4 rounded-lg text-white flex items-center justify-center ">
-                  <PricingDetails
-                    item={item}
-                    smsQuantityMonthly={smsQuantityMonthly}
-                    smsQuantityStarter={smsQuantityStarter}
-                  />
-                </CarouselItem>
-              )}
-              {/* details */}
-
-              {/*pricing form */}
-              <CarouselItem className="flex items-center justify-center">
-                <PricingForm
+        <DialogHeader className="hidden">
+          <DialogTitle></DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        <Carousel>
+          <CarouselContent>
+            {!isBusiness && (
+              <CarouselItem>
+                <PricingDetails
                   item={item}
                   smsQuantityMonthly={smsQuantityMonthly}
                   smsQuantityStarter={smsQuantityStarter}
-                  isBusiness={isBusiness}
                 />
               </CarouselItem>
-            </CarouselContent>
-            {!isBusiness && (
-              <div className="flex items-center justify-center space-x-4 mt-4">
-                <CarouselPrevious />
-                <CarouselNext />
-              </div>
             )}
-          </Carousel>
-        </div>
+            {/* details */}
+
+            {/*pricing form */}
+            <CarouselItem>
+              <PricingForm
+                item={item}
+                smsQuantityMonthly={smsQuantityMonthly}
+                smsQuantityStarter={smsQuantityStarter}
+                isBusiness={isBusiness}
+              />
+            </CarouselItem>
+          </CarouselContent>
+          {!isBusiness && (
+            <div className="flex items-center justify-center space-x-4  mt-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          )}
+        </Carousel>
       </DialogContent>
     </Dialog>
   );
