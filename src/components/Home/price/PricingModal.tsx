@@ -27,12 +27,13 @@ const PricingModal = ({
   smsQuantityStarter: any;
   smsQuantityMonthly: any;
 }) => {
+  const isBusiness = item.id === 3;
   return (
     <Dialog>
       <DialogTrigger
         className={`w-full bg-sky-500 hover:bg-sky-600  text-white py-2 cursor-pointer rounded-lg mt-4`}
       >
-        {item.id !== 3 ? "Buy Now" : "Contact Us"}
+        {!isBusiness ? "Buy Now" : "Contact Us"}
       </DialogTrigger>
       <DialogContent>
         <div className="mx-auto max-w-xs">
@@ -42,7 +43,7 @@ const PricingModal = ({
           </DialogHeader>
           <Carousel className="w-full max-w-xs">
             <CarouselContent>
-              {item.id !== 3 && (
+              {!isBusiness && (
                 <CarouselItem className="p-4 rounded-lg text-white flex items-center justify-center ">
                   <PricingDetails
                     item={item}
@@ -54,15 +55,16 @@ const PricingModal = ({
               {/* details */}
 
               {/*pricing form */}
-              <CarouselItem>
+              <CarouselItem className="flex items-center justify-center">
                 <PricingForm
                   item={item}
                   smsQuantityMonthly={smsQuantityMonthly}
                   smsQuantityStarter={smsQuantityStarter}
+                  isBusiness={isBusiness}
                 />
               </CarouselItem>
             </CarouselContent>
-            {item.id !== 3 && (
+            {!isBusiness && (
               <div className="flex items-center justify-center space-x-4 mt-4">
                 <CarouselPrevious />
                 <CarouselNext />

@@ -42,7 +42,7 @@ export function AppSidebarContent({
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Panel</SidebarGroupLabel>
+      <SidebarGroupLabel>Documentation & Purchase</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible

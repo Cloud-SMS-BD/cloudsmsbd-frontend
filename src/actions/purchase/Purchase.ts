@@ -24,18 +24,12 @@ type purchaseType = {
     contact_phone_number?: string[];
     formError?: string[];
   };
+  success?: boolean;
 };
 export const PurchaseAction = async (
   previousState: purchaseType,
   formData: FormData
 ): Promise<purchaseType> => {
-  // test
-  console.log({
-    package_name: formData.get("package_name"),
-    sms_quantity: Number(formData.get("sms_quantity")),
-    tranx_id: formData.get("tranx_id"),
-    customer_remarks: formData.get("customer_remarks"),
-  });
   let payload: any = { package_name: formData.get("package_name") };
 
   if (formData.get("package_name") !== "business") {
@@ -61,14 +55,13 @@ export const PurchaseAction = async (
     contact_name: formData.get("contact_name") || "",
     contact_phone_number: formData.get("contact_phone_number") || "",
   });
-  console.log(result);
 
   if (!result.success) {
     return {
       errors: result.error.flatten().fieldErrors,
     };
   }
-  console.log(payload);
+
   try {
     const res = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/purchase/`,
@@ -80,7 +73,10 @@ export const PurchaseAction = async (
 
     toast.success("Purchase successful");
     console.log(res);
-    return { errors: {} };
+    return {
+      errors: {},
+      success: true,
+    };
   } catch (error) {
     if (error instanceof Error) {
       return {

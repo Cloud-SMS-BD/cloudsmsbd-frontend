@@ -9,12 +9,14 @@ import {
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 
-export function OtpAndSmsService({
+export function SingleService({
   projects,
   setOpenMobile,
   openMobile,
+  title,
 }: {
   setOpenMobile: (state: boolean) => void | void;
+  title: string;
   openMobile: boolean;
   projects: {
     name: string;
@@ -24,7 +26,7 @@ export function OtpAndSmsService({
 }) {
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>OTP & SMS Service</SidebarGroupLabel>
+      <SidebarGroupLabel>{title}</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem

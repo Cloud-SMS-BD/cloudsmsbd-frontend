@@ -22,7 +22,7 @@ import {
 
 import { AppSidebarFooter } from "./AppSidebarFooter";
 import { AppSidebarHeader } from "./AppSidebarHeader";
-import { OtpAndSmsService } from "./AppSidebarSmsOrOtp";
+import { SingleService } from "./AppSidebarSmsOrOtp";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { setOpenMobile, openMobile, state } = useSidebar();
@@ -34,12 +34,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       {/* Content */}
       <SidebarContent>
+        <SingleService
+        title={"Analytics"}
+          openMobile={openMobile}
+          setOpenMobile={setOpenMobile}
+          projects={data.dashboardPage}
+        />
         <AppSidebarContent
           setOpenMobile={setOpenMobile}
           items={data.navMain}
           openMobile={openMobile}
         />
-        <OtpAndSmsService
+        <SingleService
+          title={"OTP & SMS Service"}
           openMobile={openMobile}
           setOpenMobile={setOpenMobile}
           projects={data.projects}
@@ -54,19 +61,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   );
 }
 const data = {
-  navMain: [
+  dashboardPage: [
     {
-      title: "Dashboard",
+      name: "Dashboard",
       url: "/dashboard",
       icon: LayoutDashboard,
-      isActive: true,
-      items: [
-        {
-          title: "Analytics",
-          url: "/dashboard",
-        },
-      ],
     },
+  ],
+  navMain: [
     {
       title: "Documentation",
       url: "#",

@@ -9,6 +9,7 @@ import PricingModal from "./PricingModal";
 function PricingSection() {
   const [smsQuantityStarter, setSmsQuantityStarter] = useState(250);
   const [smsQuantityMonthly, setSmsQuantityMonthly] = useState(50);
+  
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16">

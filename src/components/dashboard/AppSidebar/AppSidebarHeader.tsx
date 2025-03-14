@@ -3,6 +3,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ export function AppSidebarHeader() {
   const activeTeam = {
     name: "Cloud Sms BD",
     logo: "/login.webp",
-    plan: "Free Plan",
+    plan: "Back",
   };
 
   return (
@@ -30,7 +31,10 @@ export function AppSidebarHeader() {
             />
             <div className="grid flex-1 text-left text-sm leading-tight cursor-pointer">
               <span className="truncate font-semibold">{activeTeam.name}</span>
-              <span className="truncate text-xs">{activeTeam.plan}</span>
+              <span className="truncate text-xs ">
+                <ArrowLeft size={16} className="inline-block mr-1" />
+                {activeTeam.plan}
+              </span>
             </div>
           </SidebarMenuButton>
         </Link>

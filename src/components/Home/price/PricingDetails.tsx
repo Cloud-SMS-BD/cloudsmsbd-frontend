@@ -63,7 +63,7 @@ const PricingDetails = ({
         <p className="text-lg font-bold mt-2">Bkash Payment</p>
 
         {/* Payment Numbers */}
-        {["01732243108", "01762245129"].map((number) => (
+        {["01760001377"].map((number) => (
           <div
             key={number}
             className="flex items-center font-semibold gap-2 text-red-500 mt-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-md"
@@ -78,6 +78,10 @@ const PricingDetails = ({
             </button>
           </div>
         ))}
+        <span className="mt-2 text-center">
+          বিকাশ নম্বরে <span className="text-red-500 font-semibold">Send money </span>করুন এবং{" "}
+          <span className="text-red-500 font-semibold">Transaction ID </span>সংরক্ষণ করুন
+        </span>
       </div>
     </div>
   );
