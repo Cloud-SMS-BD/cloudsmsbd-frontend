@@ -6,24 +6,13 @@ import { Check } from "lucide-react";
 import { useState } from "react";
 import PricingModal from "./PricingModal";
 
-function PricingSection() {
+function Pricing() {
   const [smsQuantityStarter, setSmsQuantityStarter] = useState(250);
   const [smsQuantityMonthly, setSmsQuantityMonthly] = useState(50);
-  
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Pricing
-          </h1>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-            Choose the item that works for you.
-          </p>
-          <div className="h-1 mx-auto bg-primary w-24 mt-6 rounded"></div>
-        </div>
-
+    <section className=" py-16 w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricingitems.map((item) => (
@@ -139,7 +128,7 @@ function PricingSection() {
   );
 }
 
-export default PricingSection;
+export default Pricing;
 
 const pricingitems = [
   {
