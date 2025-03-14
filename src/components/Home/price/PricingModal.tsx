@@ -43,7 +43,7 @@ const PricingModal = ({
         <Carousel>
           <CarouselContent>
             {!isBusiness && (
-              <CarouselItem>
+              <CarouselItem className="flex items-center justify-center">
                 <PricingDetails
                   item={item}
                   smsQuantityMonthly={smsQuantityMonthly}
@@ -54,7 +54,7 @@ const PricingModal = ({
             {/* details */}
 
             {/*pricing form */}
-            <CarouselItem>
+            <CarouselItem className="flex items-center justify-center">
               <PricingForm
                 item={item}
                 smsQuantityMonthly={smsQuantityMonthly}

@@ -45,7 +45,17 @@ const PricingForm = ({
     )
   ) : (
     <>
-      <form action={action} className="space-y-4 mt-4 container mx-auto p-1">
+      <form action={action} className="space-y-4 mt-4 p-1">
+        {!isBusiness ? (
+          <div className="text-gray-700 text-xl font-semibold mb-4">
+            আপনার ট্রানজেকশন আইডি এবং মন্তব্য নিচে প্রদান করুন।
+          </div>
+        ) : (
+          <div className="text-gray-700 text-xl font-semibold mb-4">
+            আপনার যোগাযোগের তথ্য নিচে প্রদান করুন।
+          </div>
+        )}
+
         <Input
           required
           type="text"
