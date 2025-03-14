@@ -1,5 +1,13 @@
 # Redirect API requests only for api.cloudsmsbd.com
 https://api.cloudsmsbd.com/* https://33dd241f-eaf3.ongshak.com/:splat 200!
 
+# Allow static assets to load properly
+/assets/* /assets/:splat 200
+/images/* /images/:splat 200
+/*.png /:splat 200
+/*.jpg /:splat 200
+/*.css /:splat 200
+/*.js /:splat 200
+
 # Serve frontend normally for cloudsmsbd.com
 /* /index.html 200
