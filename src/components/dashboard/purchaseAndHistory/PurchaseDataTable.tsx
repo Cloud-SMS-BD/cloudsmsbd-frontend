@@ -50,10 +50,10 @@ const PurchaseDataTable = ({ data }: { data: any }) => {
               <TableCell className="text-center">
                 <Badge
                   className={`${
-                    item?.verified === true ? "bg-green-500" : "bg-red-500"
+                    item?.verified === true ? "bg-green-500" : "bg-yellow-500"
                   } text-white`}
                 >
-                  {item?.verified === true ? "Approved" : "Denied"}
+                  {item?.verified === true ? "Approved" : "Pending"}
                 </Badge>
               </TableCell>
             </TableRow>
