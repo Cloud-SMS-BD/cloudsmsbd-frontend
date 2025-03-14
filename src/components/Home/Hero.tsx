@@ -14,23 +14,23 @@ const Hero = () => {
       <section className="pt-12 sm:pt-16">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 text-center">
           <h1 className="px-6 text-lg text-gray-600 dark:text-gray-300">
-            Affordable & Reliable OTP Service in Bangladesh
+            Affordable & Reliable SMS Service in Bangladesh
           </h1>
           <p className="mt-5 text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-6xl">
-            Get OTP services at unbeatable prices{" "}
+            Send SMS at unbeatable rates{" "}
             <span className="relative inline-flex">
               <span className="absolute inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#7c5eff] blur-lg opacity-30"></span>
               <span className="relative">
                 {" "}
-                powered by{" "}
+                Starting from{" "}
                 <span className="bg-gradient-to-r from-[#FF44EC] via-violet-600 to-[#FF675E] text-transparent bg-clip-text">
-                  AI!
+                  0.30 TK!
                 </span>{" "}
               </span>
             </span>
           </p>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Experience secure, fast, and cost-effective OTP solutions for your
+            Experience secure, fast, and cost-effective SMS solutions for your
             business, enhanced by AI technology.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center mt-9 space-y-4 sm:space-y-0 sm:space-x-5">
@@ -42,7 +42,7 @@ const Hero = () => {
                 <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
                 <span className="relative z-20">
                   {" "}
-                  {isLogin ? "Get API Token" : "Sign Up Now!"}
+                  {isLogin ? "Get API Token" : "Sign Up Free!"}
                 </span>
               </button>
             </Link>
@@ -77,7 +77,7 @@ const Hero = () => {
             </Link>
           </div>
           <p className="mt-8 text-base text-gray-500 dark:text-gray-400">
-            Limited time offer: Free trial with limited messages
+            Limited time offer: Get 10 SMS free on sign up!
           </p>
         </div>
         <div className="relative py-4">
