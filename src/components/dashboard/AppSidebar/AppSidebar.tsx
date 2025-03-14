@@ -35,7 +35,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {/* Content */}
       <SidebarContent>
         <SingleService
-        title={"Analytics"}
+          title={"Analytics"}
           openMobile={openMobile}
           setOpenMobile={setOpenMobile}
           projects={data.dashboardPage}
@@ -76,12 +76,12 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "Introduction",
-          url: "/dashboard/doc/introduction",
-        },
-        {
           title: "API Guide",
           url: "/dashboard/doc/api-guide",
+        },
+        {
+          title: "Examples",
+          url: "/dashboard/doc/introduction",
         },
       ],
     },
