@@ -3,7 +3,7 @@ https://api.cloudsmsbd.com/sms/* https://33dd241f-eaf3.ongshak.com/forwarder/sen
 https://api.cloudsmsbd.com/* https://33dd241f-eaf3.ongshak.com/:splat 200!
 
 # Allow Netlify to serve Next.js optimized images correctly
-/_next/image* /_next/image 200
+/_next/* /_next/:splat 200
 
 # Allow static assets to load properly
 /assets/* /assets/:splat 200
