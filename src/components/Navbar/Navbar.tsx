@@ -27,7 +27,7 @@ const Navbar = () => {
         ]
       : []),
     {
-      name: "Api Documentation",
+      name: "API Documentation",
       link: `${isLogin ? "/dashboard/doc/api-guide" : "/api-guide"}`,
       icon: <BookOpenIcon size={18} />,
     },
@@ -48,7 +48,7 @@ const Navbar = () => {
               height={50}
             />
             <p className="text-xl font-bold text-gray-700 dark:text-gray-300">
-              Cloud <span className="text-sky-500">Sms BD</span>
+              Cloud <span className="text-sky-500">SMS BD</span>
             </p>
           </Link>
         </div>

@@ -42,7 +42,7 @@ const Hero = () => {
                 <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
                 <span className="relative z-20">
                   {" "}
-                  {isLogin ? "Get Api Token" : "Sign Up Now!"}
+                  {isLogin ? "Get API Token" : "Sign Up Now!"}
                 </span>
               </button>
             </Link>

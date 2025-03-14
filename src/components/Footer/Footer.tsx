@@ -15,7 +15,7 @@ const Footer = () => {
               height={50}
               className="rounded-md size-8 "
             />
-            <h2 className="text-xl font-semibold dark:text-white">Cloud Sms BD</h2>
+            <h2 className="text-xl font-semibold dark:text-white">Cloud SMS BD</h2>
           </div>
 
           {/* Copyright */}

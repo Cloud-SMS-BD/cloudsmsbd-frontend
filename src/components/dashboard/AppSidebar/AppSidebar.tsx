@@ -104,12 +104,12 @@ const data = {
   ],
   projects: [
     {
-      name: "Send Msg or Otp",
+      name: "Send SMS",
       url: "/dashboard/send-sms-otp",
       icon: MessageSquareMore,
     },
     {
-      name: "Api Token",
+      name: "API Token",
       url: "/dashboard/api-tokens",
       icon: KeyRound,
     },

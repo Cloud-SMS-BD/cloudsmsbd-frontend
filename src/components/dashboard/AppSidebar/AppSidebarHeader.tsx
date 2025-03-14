@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export function AppSidebarHeader() {
   const activeTeam = {
-    name: "Cloud Sms BD",
+    name: "Cloud SMS BD",
     logo: "/login.webp",
     plan: "Back",
   };

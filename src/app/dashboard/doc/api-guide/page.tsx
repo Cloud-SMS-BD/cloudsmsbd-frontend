@@ -3,14 +3,14 @@ const GetStartedPage = () => {
     <div className="container mx-auto max-w-4xl py-10 p-6">
       <h1 className="text-4xl font-bold">API Guide</h1>
       <p className="mt-4 text-lg text-gray-600 dark:text-slate-400">
-        This API allows you to send and verify OTPs securely. Below are the
+        This API allows you to send Messages securely. Below are the
         endpoints, request payloads, and expected responses.
       </p>
 
       {/* Send OTP Section */}
-      <h2 className="mt-10 text-3xl font-semibold">Send OTP</h2>
+      <h2 className="mt-10 text-3xl font-semibold">Send SMS</h2>
       <p className="mt-2 text-gray-600 dark:text-slate-400">
-        Use this endpoint to send an OTP to a phone number.
+        Use this endpoint to send SMS to a phone number.
       </p>
 
       <h3 className="mt-6 text-xl font-semibold">Request</h3>
