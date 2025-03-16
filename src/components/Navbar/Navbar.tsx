@@ -27,7 +27,7 @@ const Navbar = () => {
       : []),
     {
       name: "API Documentation",
-      link: `${isLogin ? "/dashboard/doc/api-guide" : "/api-guide"}`,
+      link: `${isLogin ? "/dashboard/doc/api-guide" : "/documentation"}`,
       icon: <BookOpenIcon size={18} />,
     },
   ];
