@@ -27,15 +27,22 @@ const Profile = () => {
   useEffect(() => {
     GetProfile()
       .then((e) => {
-        dispatch(setGetProfile(e));
-        dispatch(setAvailableSms(e?.sms_quota));
+        if (e) {
+          dispatch(setGetProfile(e));
+          dispatch(setAvailableSms(e?.sms_quota));
+          dispatch(setIsLogin(true));
+        } else {
+          dispatch(setGetProfile(null));
+          dispatch(setAvailableSms(0));
+          dispatch(setIsLogin(false));
+        }
       })
       .catch(() => {
         dispatch(setGetProfile(null));
         dispatch(setAvailableSms(0));
         dispatch(setIsLogin(false));
       });
-  }, [dispatch, refresh, isLogin,refreshAfterSendSms]);
+  }, [dispatch, refresh, isLogin, refreshAfterSendSms]);
 
   const user = useAppSelector(selectGetProfile);
   return (
