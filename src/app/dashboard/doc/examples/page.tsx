@@ -6,11 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { Check, Clipboard, Code2 } from "lucide-react";
-
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 const TabsData = [
   {
     language: "javascript",
-    content: `
+    code: `
 const apiKey = 'csb_ececa28e-9f0e-4d78-9dc4-3ba45af3c6d2';
 const url = \`https://api.cloudsmsbd.com/sms/?key=\${apiKey}\`;
 const data = {
@@ -32,7 +33,7 @@ fetch(url, {
   },
   {
     language: "curl",
-    content: `
+    code: `
 curl --location 'https://api.cloudsmsbd.com/sms/?key=csb_ececa28e-9f0e-4d78-9dc4-3ba45af3c6d2' \\
 --header 'Content-Type: application/json' \\
 --data '{
@@ -43,7 +44,7 @@ curl --location 'https://api.cloudsmsbd.com/sms/?key=csb_ececa28e-9f0e-4d78-9dc4
   },
   {
     language: "python",
-    content: `
+    code: `
 import requests
 import json
 
@@ -78,8 +79,7 @@ const CodeTabs = () => {
             {/* Copy Code Button */}
             <CopyCode
               code={
-                TabsData.find((item) => item.language === activeTab)?.content ||
-                ""
+                TabsData.find((item) => item.language === activeTab)?.code || ""
               }
             />
           </div>
@@ -91,6 +91,7 @@ const CodeTabs = () => {
             className="w-full"
           >
             {/* Tab Content */}
+            
             {TabsData.map((item) => (
               <TabsContent
                 key={item.language}
@@ -98,9 +99,12 @@ const CodeTabs = () => {
                 className="m-0 p-0"
               >
                 <pre className="p-4 overflow-x-auto text-gray-800 dark:text-gray-200 text-sm font-mono min-h-[200px] max-h-[400px]">
-                  <code className="dark:text-green-300 text-green-600">
-                    {item.content}
-                  </code>
+                <SyntaxHighlighter
+                    language={item.language.toLowerCase()}
+                    style={dracula}
+                  >
+                    {item.code}
+                  </SyntaxHighlighter>
                 </pre>
               </TabsContent>
             ))}
