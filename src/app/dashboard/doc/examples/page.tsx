@@ -8,9 +8,59 @@ import { cn } from "@/lib/utils";
 import { Check, Clipboard, Code2 } from "lucide-react";
 
 const TabsData = [
-  { language: "javascript", content: `Javascript` },
-  { language: "typescript", content: `TypeScript` },
-  { language: "python", content: `Python` },
+  {
+    language: "javascript",
+    content: `
+const apiKey = 'csb_ececa28e-9f0e-4d78-9dc4-3ba45af3c6d2';
+const url = \`https://api.cloudsmsbd.com/sms/?key=\${apiKey}\`;
+const data = {
+  message: 'hello from cloudsmsbd',
+  recipient: '+8801XXXXXXXXX',
+};
+
+fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+    `,
+  },
+  {
+    language: "curl",
+    content: `
+curl --location 'https://api.cloudsmsbd.com/sms/?key=csb_ececa28e-9f0e-4d78-9dc4-3ba45af3c6d2' \\
+--header 'Content-Type: application/json' \\
+--data '{
+    "message": "hello from cloudsmsbd",
+    "recipient": "+8801XXXXXXXXX"
+}'
+    `,
+  },
+  {
+    language: "python",
+    content: `
+import requests
+import json
+
+API_KEY = 'csb_ececa28e-9f0e-4d78-9dc4-3ba45af3c6d2'
+url = f'https://api.cloudsmsbd.com/sms/?key={API_KEY}'
+headers = {'Content-Type': 'application/json'}
+data = {
+    "message": "hello from cloudsmsbd",
+    "recipient": "+8801XXXXXXXXX"
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+# Print the response from the server
+print(response.json())
+    `,
+  },
 ];
 
 const CodeTabs = () => {
