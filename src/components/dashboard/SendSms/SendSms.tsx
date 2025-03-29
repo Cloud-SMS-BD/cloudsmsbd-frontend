@@ -29,7 +29,7 @@ const SendSMS = () => {
   }, [isPending, dispatch, state]);
   return (
     <section className="flex container mx-auto flex-col items-center justify-center ">
-      <div className="max-w-3xl w-full bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+      <div className="max-w-2xl w-full bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
           Send SMS or OTP
         </h2>
@@ -49,9 +49,10 @@ const SendSMS = () => {
             <Textarea
               name="message"
               maxLength={160}
+              rows={3}
               onChange={(e) => setMessage(e.target.value)}
               placeholder=" Welcome to Cloud SMS BD, Thank you for taking our service!"
-              className="w-full dark:bg-gray-800 dark:text-white"
+              className="w-full dark:bg-gray-800 dark:text-white "
             />
           </div>
           {/* Character Counter */}

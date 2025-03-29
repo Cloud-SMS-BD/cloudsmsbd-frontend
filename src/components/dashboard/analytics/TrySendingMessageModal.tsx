@@ -16,7 +16,7 @@ export function TrySendingMessage() {
     <Dialog>
       <DialogTrigger asChild>
         <Button className="mt-4 py-6 bg-sky-600 hover:bg-sky-600 text-white w-full gap-2">
-          <MessageSquareMore size={"25"}/>
+          <MessageSquareMore size={"25"} />
           Try Sending SMS
         </Button>
       </DialogTrigger>
@@ -25,7 +25,9 @@ export function TrySendingMessage() {
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
+
         <SendSMS />
+
         <DialogFooter className="hidden"></DialogFooter>
       </DialogContent>
     </Dialog>
