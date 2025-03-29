@@ -5,9 +5,11 @@ const GetStartedPage = () => {
       <p className="mt-4 text-lg text-gray-600 dark:text-slate-400">
         This API allows you to send SMS securely. Below are the
         endpoints, request payloads, and expected responses.
+        <br></br>
+        (You can access the API only after purchasing an SMS package)
       </p>
 
-      {/* Send OTP Section */}
+      {/* Send SMS Section */}
       <h2 className="mt-10 text-3xl font-semibold">Sending single SMS</h2>
       <p className="mt-2 text-gray-600 dark:text-slate-400">
         Use this endpoint to send SMS to a phone number. You have to generate an API key from the dashboard.
@@ -39,7 +41,7 @@ const GetStartedPage = () => {
 }`}</code>
       </pre>
 
-      {/* Verify OTP Section */}
+      {/* Sending bulk SMS */}
       <h2 className="mt-10 text-3xl font-semibold">
         Sending bulk SMS
       </h2>
@@ -76,6 +78,36 @@ const GetStartedPage = () => {
     "status": "QUEUED",
     "created_at": "2025-03-14T16:00:26.021683Z",
     "sent_at": null
+}`}</code>
+      </pre>
+
+      {/* Get SMS status */}
+      <h2 className="mt-10 text-3xl font-semibold">
+        View sent SMS status
+      </h2>
+      <p className="mt-2 text-gray-600 dark:text-slate-400">
+        You have to make a GET request to the following endpoint to view SMS details along with the status.
+        You must include the SMS ID (retrieved from the response body after sending SMS) in the URL params.
+        There is 3 statuses: <code>QUEUE</code>, <code>SENT</code> and <code>REJECTED</code>
+      </p>
+
+      <h3 className="mt-6 text-xl font-semibold">Request : <span className="text-green-300 ">GET</span> </h3>
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-white overflow-auto break-words whitespace-pre-wrap">
+        <code>
+          {`https://api.cloudsmsbd.com/sms/?key=<API_KEY>&id=<SMS_ID>`}
+        </code>
+      </pre>
+
+      <h3 className="mt-4 text-xl font-semibold">Response</h3>
+      <pre className="mt-2 rounded-lg bg-gray-800 p-4 text-sm text-green-300 overflow-auto break-words whitespace-pre-wrap">
+        <code>{`{
+    "success": true,
+    "id": "e68d5e5e-9f79-4944-9b42-...",
+    "status": "SENT",
+    "recipient": "017XXXXXXXX",
+    "message": "hello Cloud SMS BD",
+    "created_at": "2025-03-14T21:54:05.476575+06:00",
+    "sent_at": "2025-03-14T21:55:01.414571+06:00"
 }`}</code>
       </pre>
 
