@@ -12,6 +12,7 @@ import { Loader } from "lucide-react";
 import { useActionState, useEffect, useState } from "react";
 
 const SendSMS = () => {
+  const [message, setMessage] = useState("");
   const availableSms = useAppSelector(selectAvailableSms);
   const dispatch = useAppDispatch();
   const [isBulk, setIsBulk] = useState(false);
@@ -47,9 +48,15 @@ const SendSMS = () => {
             </Label>
             <Textarea
               name="message"
+              maxLength={160}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder=" Welcome to Cloud SMS BD, Thank you for taking our service!"
               className="w-full dark:bg-gray-800 dark:text-white"
             />
+          </div>
+          {/* Character Counter */}
+          <div className="text-xs text-gray-500 dark:text-gray-400 text-right mt-1">
+            {message.length} / 160
           </div>
           {state.errors.message && (
             <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">

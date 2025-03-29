@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Check, Clipboard, Code2 } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 const TabsData = [
   {
     language: "javascript",

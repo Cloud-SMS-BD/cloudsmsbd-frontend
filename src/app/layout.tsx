@@ -17,8 +17,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cloud SMS BD",
-  description: "Cloud SMS and Otp BD offers reliable and fast SMS and Otp services for businesses in Bangladesh. Get bulk SMS and Otp, API integration, and promotional messages.",
-  keywords: ["Cloud SMS and Otp BD", "bulk SMS and Otp", "SMS and Otp API", "Bangladesh SMS and Otp services"],
+  description:
+    "Cloud SMS and Otp BD offers reliable and fast SMS and Otp services for businesses in Bangladesh. Get bulk SMS and Otp, API integration, and promotional messages.",
+  keywords: [
+    "Cloud SMS and Otp BD",
+    "bulk SMS and Otp",
+    "SMS and Otp API",
+    "Bangladesh SMS and Otp services",
+  ],
   // authors: [{ name: "Your Name", url: "https://www.yourwebsite.com" }],
   openGraph: {
     title: "Cloud SMS and Otp BD - Best SMS and Otp Solutions",
@@ -41,14 +47,13 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -60,7 +65,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
-            <FloatingMessenger/>
+            <FloatingMessenger />
           </ThemeProvider>
           <Toaster />
         </ReduxProvider>
