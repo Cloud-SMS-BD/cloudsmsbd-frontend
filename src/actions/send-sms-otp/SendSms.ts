@@ -2,7 +2,8 @@ import axios from "axios";
 import { toast } from "sonner";
 import { z } from "zod";
 
-const englishRegex = /^[a-zA-Z0-9\s.,!?'"()@#$%^&*-+=:;_/]*$/;
+// const englishRegex = /^[a-zA-Z0-9\s.,!?'"()@#$%^&*-+=:;_/]*$/;
+const englishRegex = /^.*$/;
 const SendSmsSchema = z.object({
   message: z
     .string()
