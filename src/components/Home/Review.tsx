@@ -25,22 +25,32 @@ export function Reviews() {
 
 const testimonials = [
   {
-    
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "John Doe",
-    title: "CEO",
+      "Integration was smooth and easy. The API docs were clear, and I had OTPs running in no time. Great for local projects.",
+    name: "Raihan Hossain",
+    title: "",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "John Doey",
-    title: "CEO",
+      "I use Cloud SMS BD to notify my regular customers about offers. It’s easy to use and saves me a lot of time.",
+    name: "Ecommerce Owner",
+    title: "",
+  },
+  {
+    quote: "Easy to use API with Flexible and Affordable pricing!",
+    name: "Nur Mahmud Tasin",
+    title: "",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "John Dob",
-    title: "CEO",
+      "Our order updates now go instantly to customers via SMS. Very helpful during sales and Eid campaigns.",
+    name: "Nasif Mahmud",
+    title: "",
+  },
+  {
+    quote:
+      "Tried it for my small campaign – worked perfectly! Plus, the SMS rate is really affordable.",
+    name: "Nahian",
+    title: "",
   },
 ];
