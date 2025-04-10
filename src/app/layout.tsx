@@ -5,6 +5,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import FloatingMessenger from "@/components/FloatingMessenger/FloatingMessenger ";
+import NextTopLoader from "nextjs-toploader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -64,6 +65,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <NextTopLoader />
             {children}
             <FloatingMessenger />
           </ThemeProvider>

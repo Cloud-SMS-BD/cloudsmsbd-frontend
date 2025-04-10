@@ -115,3 +115,10 @@ const data = {
     },
   ],
 };
+
+// mobile section
+// menu 
+// login page registration page
+// teacher RegisterAction
+// ad
+// enrollment page
