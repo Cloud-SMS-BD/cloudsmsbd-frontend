@@ -19,32 +19,32 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cloud SMS BD",
   description:
-    "Cloud SMS and Otp BD offers reliable and fast SMS and Otp services for businesses in Bangladesh. Get bulk SMS and Otp, API integration, and promotional messages.",
+    "Cloud SMS BD offers reliable and fast SMS and OTP services for businesses in Bangladesh. Get bulk SMS, OTP, API integration, and promotional messages.",
   keywords: [
-    "Cloud SMS and Otp BD",
-    "bulk SMS and Otp",
-    "SMS and Otp API",
-    "Bangladesh SMS and Otp services",
+    "Cloud SMS BD",
+    "bulk SMS Bangladesh",
+    "OTP service BD",
+    "SMS API Bangladesh",
+    "OTP API BD",
+    "SMS and OTP provider",
   ],
-  // authors: [{ name: "Your Name", url: "https://www.yourwebsite.com" }],
+  authors: [{ name: "Cloud SMS BD", url: "https://cloudsmsbd.com/" }],
+  creator: "Cloud SMS BD",
+  publisher: "Cloud SMS BD",
   openGraph: {
-    title: "Cloud SMS and Otp BD - Best SMS and Otp Solutions",
-    description: "Reliable bulk SMS and Otp and API services in Bangladesh.",
-    url: "https://www.cloudsms and Otpbd.com",
-    siteName: "Cloud SMS and Otp BD",
+    title: "Cloud SMS BD - Best SMS and OTP Solutions",
+    description: "Reliable bulk SMS and OTP API services in Bangladesh.",
+    url: "https://cloudsmsbd.com/",
+    siteName: "Cloud SMS BD",
     type: "website",
-    // images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cloud Sms and Otp BD Logo" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cloud SMS and Otp BD - Best SMS and Otp Solutions",
-    description: "Fast and secure bulk SMS and Otp services in Bangladesh.",
-    // images: ["/twitter-image.png"],
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    // apple: "/apple-touch-icon.png",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cloud SMS BD",
+      },
+    ],
   },
 };
 
@@ -71,6 +71,26 @@ export default function RootLayout({
           </ThemeProvider>
           <Toaster />
         </ReduxProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Cloud SMS BD",
+              url: "https://cloudsmsbd.com/",
+              logo: "/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+8801760001377",
+                contactType: "customer service",
+                areaServed: "BD",
+                availableLanguage: ["English", "Bengali"],
+              },
+              sameAs: ["https://www.facebook.com/fb.cloudsmsbd"],
+            }),
+          }}
+        />
       </body>
     </html>
   );
