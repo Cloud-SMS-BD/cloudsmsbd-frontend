@@ -65,7 +65,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <NextTopLoader />
+            <NextTopLoader  showSpinner={false} />
+
             {children}
             <FloatingMessenger />
           </ThemeProvider>
