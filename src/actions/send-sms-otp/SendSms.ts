@@ -8,8 +8,8 @@ const SendSmsSchema = z.object({
   message: z
     .string()
     .min(1, "Please enter a valid message")
-    .max(160, "Message cannot exceed 160 characters")
-    .regex(englishRegex, "Only English characters are allowed"),
+    .max(160, "Message cannot exceed 160 characters"),
+    // .regex(englishRegex, "Only English characters are allowed"),
   recipient: z.string().min(11, "please enter a valid recipient"),
 });
 type SendSmsProps = {
