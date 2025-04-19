@@ -3,7 +3,7 @@ const Notification = ({ show }: { show: boolean }) => {
     <div
       className={`${
         show
-          ? "bg-red-500 text-white text-center py-2 px-4 font-medium shadow-md dark:bg-red-600 dark:text-gray-100"
+          ? "bg-red-500 text-white text-center py-2 px-4 font-medium text-sm shadow-md dark:bg-red-600 dark:text-gray-100"
           : "hidden"
       }`}
     >
