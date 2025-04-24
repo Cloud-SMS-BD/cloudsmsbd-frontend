@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <section>
-      <Notification show={true}/>
+      <Notification show={false}/>
       <nav className="z-50 bg-opacity-30 backdrop-blur-lg sticky top-0 p-4 border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700 transition-colors">
         <div className="container mx-auto flex items-center justify-between lg:px-8">
           {/* Logo */}
