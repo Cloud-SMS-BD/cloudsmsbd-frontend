@@ -29,7 +29,7 @@ const AllSmsListTable = () => {
 
     const interval = setInterval(() => {
       fetchData();
-    }, 1000);
+    }, 30000); // Refresh every 30 seconds
 
     return () => clearInterval(interval);
   }, [dispatch, refresh, currentPage]);
@@ -40,7 +40,7 @@ const AllSmsListTable = () => {
     <div className="w-full">
       <h1 className="text-2xl md:text-3xl font-semibold flex justify-center items-center gap-2">
         <MessageSquareMore size={25} />
-        <span>SMS List</span>
+        <span>SMS List </span>
       </h1>
       {/* Table */}
       <div className="overflow-x-auto max-w-7xl mx-auto w-full border mt-4">

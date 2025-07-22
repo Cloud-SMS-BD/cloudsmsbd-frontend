@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -20,7 +21,7 @@ const TableData = ({ allSmsList }: { allSmsList: any }) => {
 
   return (
     <Table>
-     
+     <TableCaption>Table will refresh every 30 seconds</TableCaption>
       <TableHeader>
         <TableRow className="bg-gray-100 dark:bg-gray-800">
           <TableHead>Recipient</TableHead>
