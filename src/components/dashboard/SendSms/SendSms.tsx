@@ -1,39 +1,69 @@
 "use client";
 
-import { SendSmsAction } from "@/actions/send-sms-otp/SendSms";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { selectAvailableSms, setSendSmsRefresh } from "@/redux/allStateSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useMutationHandler } from "@/hooks/useMutationHandler";
+import { poster } from "@/lib/request";
+import { selectAvailableSms } from "@/redux/allStateSlice";
+import { useAppSelector } from "@/redux/hooks";
 import { Loader } from "lucide-react";
-import { useActionState, useEffect, useState } from "react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const SendSMS = () => {
-  const [message, setMessage] = useState("");
   const availableSms = useAppSelector(selectAvailableSms);
-  const dispatch = useAppDispatch();
   const [isBulk, setIsBulk] = useState(false);
-  const [state, action, isPending] = useActionState(
-    SendSmsAction.bind(null, isBulk),
-    {
-      errors: {},
+  const [message, setMessage] = useState("");
+  const [recipient, setRecipient] = useState("");
+  const URL = isBulk ? `/forwarder/send/?type=bulk` : `/forwarder/send/`;
+  const { mutate: sendSmsMutate, isPending } = useMutationHandler({
+    mutationFn: (payload) => poster(URL, payload),
+    successMessage: "SMS sent successfully",
+    errorMessage: "Failed to send SMS",
+    queryKey: ["all-sms-list"],
+    
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!message || !recipient) {
+      toast.error("Message and recipient are required");
+      return;
     }
-  );
-  useEffect(() => {
-    if (!isPending) {
-      dispatch(setSendSmsRefresh());
+    if (isBulk && !recipient.includes(",")) {
+      toast.error(
+        "For bulk SMS, please enter multiple recipients separated by commas"
+      );
+      return;
     }
-  }, [isPending, dispatch, state]);
+    if (recipient.length < 11) {
+      toast.error("Phone number must be at least 11 characters");
+      return;
+    }
+    if (message.length > 160) {
+      toast.error("Message cannot exceed 160 characters");
+      return;
+    }
+    sendSmsMutate({
+      message: message,
+      [isBulk ? "recipients" : "recipient"]: isBulk
+        ? recipient.split(",")
+        : recipient,
+    });
+
+    setMessage("");
+    setRecipient("");
+  };
   return (
     <section className="flex container mx-auto flex-col items-center justify-center ">
       <div className="max-w-2xl w-full bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
           Send SMS or OTP
         </h2>
-        <form action={action}>
+        <form onSubmit={handleSubmit}>
           <div className="flex items-center justify-between mb-6 border-b pb-4">
             <Label className="text-gray-700 dark:text-gray-300">
               Single SMS
@@ -59,11 +89,7 @@ const SendSMS = () => {
           <div className="text-xs text-gray-500 dark:text-gray-400 text-right mt-1">
             {message.length} / 160
           </div>
-          {state.errors.message && (
-            <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">
-              {state.errors.message}
-            </div>
-          )}
+
           {/* Recipient Input */}
           <div className="mb-4">
             <Label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
@@ -81,6 +107,8 @@ const SendSMS = () => {
                 name="recipient"
                 placeholder={isBulk ? "01XXXXXXX, 01XXXXXXX" : "01XXXXXXX"}
                 className="w-full pl-12 dark:bg-gray-800 dark:text-white"
+                onChange={(e) => setRecipient(e.target.value)}
+                value={recipient}
               />
             </div>
 
@@ -90,12 +118,6 @@ const SendSMS = () => {
                 : "Enter a single phone number."}
             </p>
           </div>
-
-          {state.errors.recipient && (
-            <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">
-              {state.errors.recipient}
-            </div>
-          )}
 
           {/* Send Button */}
           <Button
@@ -110,11 +132,6 @@ const SendSMS = () => {
             <p className="text-center mt-1 text-sm text-gray-500">
               Available SMS: {availableSms}
             </p>
-          )}
-          {state.errors.formError && (
-            <div className="bg-red-100 text-red-500 p-2 rounded-lg my-2 mt-4">
-              {state.errors.formError}
-            </div>
           )}
         </form>
       </div>

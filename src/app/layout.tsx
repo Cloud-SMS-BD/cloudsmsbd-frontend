@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import FloatingMessenger from "@/components/FloatingMessenger/FloatingMessenger ";
 import NextTopLoader from "nextjs-toploader";
+import TanstackProvider from "@/provider/tanstack-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -58,20 +59,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ReduxProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextTopLoader  showSpinner={false} />
+        <TanstackProvider>
+          <ReduxProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NextTopLoader showSpinner={false} />
 
-            {children}
-            <FloatingMessenger />
-          </ThemeProvider>
-          <Toaster />
-        </ReduxProvider>
+              {children}
+              <FloatingMessenger />
+            </ThemeProvider>
+            <Toaster />
+          </ReduxProvider>
+        </TanstackProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

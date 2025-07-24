@@ -1,3 +1,4 @@
+import HandleError from "@/lib/errorHandle";
 import axios from "axios";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -52,21 +53,7 @@ export const LoginAction = async (
     }
     toast.success("Log in successful");
   } catch (error) {
-    if (error instanceof Error) {
-      return {
-        errors: {
-          formError: axios.isAxiosError(error)
-            ? error.response?.data.message
-            : [error.message],
-        },
-      };
-    } else {
-      return {
-        errors: {
-          formError: ["Unknown error"],
-        },
-      };
-    }
+    return HandleError(error);
   }
 
   return { success: true, errors: {} };
